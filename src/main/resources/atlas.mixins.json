@@ -1,11 +1,51 @@
 {
 	"required": true,
-	"package": "dev.atlas.client.mixins",
+	"package": "io.julia0x.atlas.mixins",
 	"compatibilityLevel": "JAVA_21",
+	"minVersion": "0.8",
+	"refmap": "atlas.refmap.json",
+	"verbose": false,
 	"mixins": [
+		"client.MixinMinecraftClient",
+		"client.MixinGameRenderer",
+		"client.MixinScreen",
+		"client.MixinInputUtil",
+		"server.MixinServer",
+		"server.MixinServerTickEvents",
+		"world.MixinLevel",
+		"world.MixinBlockEntity",
+		"entity.MixinEntity",
+		"entity.MixinLivingEntity",
+		"entity.MixinPlayer",
+		"network.MixinClientConnection",
+		"network.MixinServerPlayNetworkHandler",
+		"ui.MixinHudElement",
+		"ui.MixinScreenManager",
+		"performance.MixinRenderSystem"
+	],
+	"client": [
+		"client.MixinMinecraftClient",
+		"client.MixinGameRenderer",
+		"client.MixinScreen",
+		"client.MixinInputUtil",
+		"ui.MixinHudElement",
+		"ui.MixinScreenManager",
+		"performance.MixinRenderSystem"
+	],
+	"server": [
+		"server.MixinServer",
+		"server.MixinServerTickEvents",
+		"world.MixinLevel",
+		"world.MixinBlockEntity",
+		"entity.MixinEntity",
+		"entity.MixinLivingEntity",
+		"entity.MixinPlayer",
+		"network.MixinServerPlayNetworkHandler"
 	],
 	"injectors": {
-		"defaultRequire": 1
+		"defaultRequire": 1,
+		"defaultGroup": "io.julia0x.atlas.mixins",
+		"maxShiftBy": 5
 	},
 	"overwrites": {
 		"requireAnnotations": true
